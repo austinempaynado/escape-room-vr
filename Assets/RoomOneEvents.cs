@@ -15,9 +15,21 @@ public class RoomOneEvents : MonoBehaviour
     }
 
     public event Action onLightTorch;
+    public event Action onLockCount;
+    public event Action onOpenCoffin;
 
     public void LightTorch()
     {
         onLightTorch?.Invoke();
+    }
+
+    public void LockCount()
+    {
+        onLockCount?.Invoke();
+    }
+
+    public void OpenCoffin()
+    {
+        onOpenCoffin?.Invoke();
     }
 }

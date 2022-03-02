@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class TorchController : MonoBehaviour
 {
+    public static TorchController current;
+    private void Awake()
+    {
+        current = this;
+    }
+
+    [HideInInspector] public bool isLit =false;
     public GameObject flame;
     // Start is called before the first frame update
     void Start()
@@ -14,5 +21,6 @@ public class TorchController : MonoBehaviour
     private void lightTorch()
     {
         flame.SetActive(true);
+        isLit = true;
     }
 }
