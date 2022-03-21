@@ -8,6 +8,7 @@ TagManager:
   - Torch
   - KeyToRoomTwo
   - Chest Key
+  - Whacking Stick
   layers:
   - Default
   - TransparentFX
