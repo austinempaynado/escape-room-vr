@@ -17,6 +17,7 @@ public class RoomOneEvents : MonoBehaviour
     public event Action onLightTorch;
     public event Action onLockCount;
     public event Action onOpenCoffin;
+    public event Action onUnlockPurple;
 
     public void LightTorch()
     {
@@ -31,5 +32,10 @@ public class RoomOneEvents : MonoBehaviour
     public void OpenCoffin()
     {
         onOpenCoffin?.Invoke();
+    }
+
+    public void OpenPurpleLock()
+    {
+        onUnlockPurple?.Invoke();
     }
 }
