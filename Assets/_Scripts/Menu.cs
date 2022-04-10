@@ -15,8 +15,11 @@ public class Menu : MonoBehaviour
     public static Menu current = null;
     GameObject[] floors;
 
+    public GameObject Page1;
+    public GameObject Page2;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         if (current == null)
         {
@@ -30,8 +33,8 @@ public class Menu : MonoBehaviour
         floors = GameObject.FindGameObjectsWithTag("Floor");
     }
 
-    public event Action enableColorblindMode;
-    public event Action disablerColorblindMode;
+    public event Action EnableColorblindMode;
+    public event Action DisablerColorblindMode;
 
     // Update is called once per frame
     void Update()
@@ -88,8 +91,32 @@ public class Menu : MonoBehaviour
         }
     }
 
-    public void toggleColorblindMode()
+    public void toggleColorblindMode(bool isOn)
     {
+        if (isOn)
+        {
+            EnableColorblindMode?.Invoke();
+        }
+        else
+        {
+            DisablerColorblindMode?.Invoke();
+        }
+    }
 
+    public void ChangeToPage1()
+    {
+        Page1.SetActive(true);
+        Page2.SetActive(false);
+    }
+
+    public void ChangeToPage2()
+    {
+        Page1.SetActive(false);
+        Page2.SetActive(true);
+    }
+
+    public void CloseUI()
+    {
+        menuUI.enabled = !menuUI.enabled;
     }
 }
