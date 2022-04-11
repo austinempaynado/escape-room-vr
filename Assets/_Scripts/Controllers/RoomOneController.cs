@@ -20,6 +20,7 @@ public class RoomOneController : MonoBehaviour
         if(locksOpened == 2)
         {
             RoomOneEvents.current.OpenCoffin();
+            locksOpened++;
         }
     }
 

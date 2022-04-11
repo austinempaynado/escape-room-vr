@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class CoffinCoverOpen : MonoBehaviour
 {
+    public AudioClip openingCasket;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,5 +15,6 @@ public class CoffinCoverOpen : MonoBehaviour
     private void OpenCoffin()
     {
         LeanTween.moveLocalX(gameObject, -0.4f, 1);
+        GetComponent<AudioSource>().PlayOneShot(openingCasket);
     }
 }

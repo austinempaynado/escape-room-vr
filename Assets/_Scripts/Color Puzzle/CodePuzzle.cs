@@ -8,6 +8,7 @@ public class CodePuzzle : MonoBehaviour
     public int count = 0;
     public GameObject tiles, leftPivot, rightPivot;
     private bool locked = true;
+    public AudioClip creakingdoor;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,6 @@ public class CodePuzzle : MonoBehaviour
     private void OpenCabinet()
     {
         LeanTween.rotateY(leftPivot, 140.0f, 2.0f);
-        LeanTween.rotateY(rightPivot, -140.0f, 2.3f);
+        GetComponent<AudioSource>().PlayOneShot(creakingdoor);
     }
 }

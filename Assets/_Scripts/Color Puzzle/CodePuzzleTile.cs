@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class CodePuzzleTile : MonoBehaviour
 {
+    public AudioClip UISound;
+    private AudioSource audioSource;
+
     public Color[] colorList;
     public Sprite[] imageList;
 
@@ -25,6 +28,7 @@ public class CodePuzzleTile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         colorIndex = 0;
         imageIndex = 0;
 
@@ -42,6 +46,7 @@ public class CodePuzzleTile : MonoBehaviour
 
     public void ChangeColor()
     {
+        audioSource.PlayOneShot(UISound);
 
         if (!colorBlindMode)
         {

@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class ChestLock : MonoBehaviour
 {
+    public AudioClip unlockSound;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Chest Key")
         {
             //activate event
+
             RoomOneEvents.current.OpenPurpleLock();
             Destroy(other.gameObject);
-            Destroy(gameObject);
+            GetComponent<AudioSource>().PlayOneShot(unlockSound);
+            StartCoroutine("DestroyLock");
+
         }
+    }
+
+
+    IEnumerator DestroyLock()
+    {
+        yield return new WaitForSeconds(2.0f);
+        Destroy(gameObject);
     }
 }
