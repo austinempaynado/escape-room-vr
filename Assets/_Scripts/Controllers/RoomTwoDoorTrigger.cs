@@ -14,6 +14,7 @@ public class RoomTwoDoorTrigger : MonoBehaviour
             LeanTween.moveY(pivot, 3, 2f);
             GetComponent<AudioSource>().PlayOneShot(doorOpen);
             GetComponent<AudioSource>().PlayOneShot(unlock);
+            StartCoroutine("Destroy");
         }
     }
 
