@@ -20,6 +20,8 @@ public class RoomOneEvents : MonoBehaviour
     public event Action onUnlockPurple;
     public event Action onPressurePlateStep;
     public event Action onPressurePlateStepOff;
+    public event Action onCoffinPressurePlateStep;
+    public event Action offCoffinPressurePlateStep;
 
     public void LightTorch()
     {
@@ -49,5 +51,15 @@ public class RoomOneEvents : MonoBehaviour
     public void ClosePressurePlateDoor()
     {
         onPressurePlateStepOff?.Invoke();
+    }
+
+    public void OnCoffinPlate()
+    {
+        onCoffinPressurePlateStep?.Invoke();
+    }
+
+    public void OffCoffinPlate()
+    {
+        offCoffinPressurePlateStep?.Invoke();
     }
 }

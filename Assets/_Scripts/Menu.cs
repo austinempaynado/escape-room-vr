@@ -119,4 +119,9 @@ public class Menu : MonoBehaviour
     {
         menuUI.enabled = !menuUI.enabled;
     }
+
+    public void QuitApplication()
+    {
+        Application.Quit();
+    }
 }

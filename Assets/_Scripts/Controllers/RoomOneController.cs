@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class RoomOneController : MonoBehaviour
 {
-
+    public Collider player;
+    public Collider ramp;
     private int locksOpened = 0;
     // Start is called before the first frame update
     void Start()
     {
         RoomOneEvents.current.onLockCount += increaseUnlockCount;
+        Physics.IgnoreCollision(player, ramp);
     }
 
     // Update is called once per frame

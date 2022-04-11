@@ -10,6 +10,9 @@ TagManager:
   - Chest Key
   - Whacking Stick
   - Floor
+  - Ramp
+  - Ramp Weight
+  - Sack Weight
   layers:
   - Default
   - TransparentFX

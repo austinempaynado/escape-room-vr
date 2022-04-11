@@ -7,7 +7,7 @@ public class PressurePlateStep : MonoBehaviour
     private int itemCount = 0;
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Weight")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Sack Weight")
         {
             itemCount++;
             RoomOneEvents.current.OpenPressurePlateDoor();
@@ -16,7 +16,7 @@ public class PressurePlateStep : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Weight")
+        if (other.gameObject.tag == "Player" || other.gameObject.tag == "Sack Weight")
         {
             itemCount--;
             if(itemCount == 0)
